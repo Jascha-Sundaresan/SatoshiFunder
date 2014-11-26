@@ -13,3 +13,29 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.col-md-24 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  float: left;
+  width: 20%;
+}
+
+.category-name {
+  text-align: center;
+  font-size: 22px;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  display: block;
+  text-decoration: none;
+  color: #828587;
+}
+
+.category-cell {
+  padding-height: 100px;
+}
