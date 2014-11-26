@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = current_user.projects.new
+    @categories = Category.all
   end
 
   def create
@@ -11,6 +12,7 @@ class ProjectsController < ApplicationController
       redirect_to projects_url
     else
       flash.now[:errors] = @project.errors.full_messages
+      @categories = Category.all
       render :new
     end
   end
@@ -30,15 +32,17 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    @categories = Category.all
   end
 
   def update
     @project = Project.find(params[:id])
   
-    if project.update(project_params)
-      redirect_to projects_url
+    if @project.update(project_params)
+      redirect_to project_url
     else
       flash.now[:errors] = @project.errors.full_messages
+      @categories = Category.all
       render :edit
     end
   end
@@ -56,7 +60,7 @@ class ProjectsController < ApplicationController
   protected
   
   def project_params
-    params.require(:project).permit(:title)
+    params.require(:project).permit(:title, :category_id)
   end
 
 end

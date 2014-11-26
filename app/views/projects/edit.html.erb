@@ -1,6 +1,15 @@
-<h1>New Project</h1>
+<div class="jumbotron">
+  <div class="container">
+    <center><h2>Start building your project!</h2></center>
+  </div>
+</div>
 
-<form action="/projects" method="post">
+
+<form action="/projects/<%= @project.id %>" method="post">
+<input type="hidden"
+       name="_method"
+       value="patch">
+
   <%= auth_token %>
 
   <label>Category<br>
@@ -14,7 +23,7 @@
   
 
   <label>Title<br>
-    <input name="project[title]" type="text"><br>
+    <input name="project[title]" type="text" value="<%= @project.title %>"><br>
   </label><br>
 
   <input type="submit" value="Submit" class="btn btn-primary"><br>

@@ -32,10 +32,9 @@
   border: 0;
   vertical-align: baseline;
   display: block;
-  text-decoration: none;
-  color: #828587;
-}
-
-.category-cell {
-  padding-height: 100px;
+  a {color: #828587;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
