@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">
-        <img alt="Brand" height="20" width="20" src="/assets/Bitcoin.png">
+        <%= image_tag "Bitcoin.png", size: "20x20" %>
       </a>
       <a class="navbar-brand" href="/">SatoshiFunder</a>
     </div>
@@ -40,6 +40,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
       <% if signed_in? %>
+      
         <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-primary navbar-btn" %></li>
       <% else %>
         <li><%= link_to "Log in", new_session_url %></li>
