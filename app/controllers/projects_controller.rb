@@ -1,13 +1,14 @@
 class ProjectsController < ApplicationController
+  before_action :require_signed_in!, except: [:index, :show]
 
   def new
     @project = current_user.projects.new
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.new(project_params)
     if @project.save
-      redirect_to root_url
+      redirect_to projects_url
     else
       flash.now[:errors] = @project.errors.full_messages
       render :new
@@ -15,7 +16,12 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @project = Project.all
+    @projects = current_user.projects
+  end
+
+  def all
+    @projects = Project.all
+    render :index
   end
 
   def show
