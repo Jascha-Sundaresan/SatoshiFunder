@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <div class="container">
+    <center><h2>New Explore an incredible digital universe!</h2></center>
+  </div>
+</div>
+
+<div class="container">
+  <% categories.each(function (category, idx) { %>
+    <% if ( idx % 5 === 0) { %>
+      <div class="row">
+    <% } %>
+    <div class="col-md-24">
+      <div class="well well-lg">
+        <div class="category-name">
+          <a href="/categories/<%= category.escape('id') %>"><%= category.escape('name') %></a>
+        </div>
+      </div>
+    </div>
+    <% if ((idx + 1) % 5 === 0) {%>
+      </div>
+    <% } %>
+  <% }) %>
+</div>

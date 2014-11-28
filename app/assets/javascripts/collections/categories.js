@@ -1,5 +1,5 @@
 SatoshiFunder.Collections.Categories = Backbone.Collection.extend({
-  
+    
   model: SatoshiFunder.Models.Category,
   
   url: "/api/categories",
@@ -21,3 +21,5 @@ SatoshiFunder.Collections.Categories = Backbone.Collection.extend({
   }
 
 });
+
+SatoshiFunder.Collections.categories = new SatoshiFunder.Collections.Categories();

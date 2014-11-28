@@ -1,12 +1,19 @@
 SatoshiFunder.Routers.Router = Backbone.Router.extend({
   initialize: function(options){
-    this.$mainEl = options.$mainEl
+    this.$mainEl = options.$mainEl;
   },
 
   routes: {
     '': 'root',
     'start': 'start',
+    'discover': 'discover',
     'projects/:id': 'show'
+  },
+
+  discover: function() {
+    SatoshiFunder.Collections.categories.fetch();
+    var view = new SatoshiFunder.Views.CategoriesIndex({ collection: SatoshiFunder.Collections.categories });
+    this._swapView(view);
   },
 
   root: function(){
