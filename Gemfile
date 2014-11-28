@@ -45,3 +45,4 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 gem 'bootstrap-sass'
 gem 'newrelic_rpm'
+gem 'backbone-on-rails'

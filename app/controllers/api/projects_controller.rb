@@ -1,4 +1,6 @@
-class ProjectsController < ApplicationController
+module Api
+  class ProjectsController < ApiController
+    class ProjectsController < ApplicationController
   before_action :require_signed_in!, except: [:index, :show]
 
   def new
@@ -58,4 +60,6 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:title, :category_id)
   end
 
+end
+  end
 end

@@ -1,0 +1,18 @@
+<title>
+  <%= project.escape('title') %> by <%= project.escape('user').escape('name') %>
+</title>
+
+<div id="project-title">
+  <%= project.escape('title') %>
+</div>
+
+<div id="project-author">
+  by <%= project.escape('user').escape('name') %>
+</div>
+
+
+<%= project.escape('category').escape('name') %><br>
+
+
+
+
