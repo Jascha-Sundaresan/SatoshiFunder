@@ -1,5 +1,4 @@
 SatoshiFunder::Application.routes.draw do
-  get "/discover", to: "categories#index"
   
   root "static_pages#root"
 

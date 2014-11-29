@@ -21,5 +21,3 @@ SatoshiFunder.Collections.Categories = Backbone.Collection.extend({
   }
 
 });
-
-SatoshiFunder.Collections.categories = new SatoshiFunder.Collections.Categories();

@@ -1,18 +1,22 @@
 SatoshiFunder.Routers.Router = Backbone.Router.extend({
   initialize: function(options){
     this.$mainEl = options.$mainEl;
+    this.categories = new SatoshiFunder.Collections.Categories();
+    this.categories.fetch();
+    this.projects = new SatoshiFunder.Collections.Projects();
+    this.projects.fetch();
   },
 
   routes: {
     '': 'root',
     'start': 'start',
-    'discover': 'discover',
-    'projects/:id': 'show'
+    'discover': 'categoriesIndex',
+    'projects': 'projectsIndex',
+    'projects/:id': 'projectShow'
   },
 
-  discover: function() {
-    SatoshiFunder.Collections.categories.fetch();
-    var view = new SatoshiFunder.Views.CategoriesIndex({ collection: SatoshiFunder.Collections.categories });
+  categoriesIndex: function() {
+    var view = new SatoshiFunder.Views.CategoriesIndex({ collection: this.categories });
     this._swapView(view);
   },
 
@@ -26,8 +30,13 @@ SatoshiFunder.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  show: function(id){
-    var project = SatoshiFunder.Collections.projects.getOrFetch(id);
+  projectsIndex: function() {
+    var view = new SatoshiFunder.Views.ProjectsIndex({ collection: this.projects });
+    this._swapView(view);
+  },
+
+  projectShow: function(id){
+    var project = this.projects.getOrFetch(id);
     var view = new SatoshiFunder.Views.ProjectShow({ model: project });
     this._swapView(view);
   },
