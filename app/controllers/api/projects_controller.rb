@@ -2,19 +2,12 @@ module Api
   class ProjectsController < ApiController
     before_action :require_signed_in!, except: [:index, :show]
 
-    def new
-      @project = current_user.projects.new
-      @categories = Category.all
-    end
-
     def create
       @project = current_user.projects.new(project_params)
       if @project.save
-        redirect_to projects_url
+        render json: @project
       else
-        flash.now[:errors] = @project.errors.full_messages
-        @categories = Category.all
-        render :new
+        render json: @project.errors.full_messages, status: 422
       end
     end
 

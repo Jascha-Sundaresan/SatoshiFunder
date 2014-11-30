@@ -1,4 +1,4 @@
-SatoshiFunder.Views.ProjectShow = Backbone.View.extend({
+SatoshiFunder.Views.ProjectShow = Backbone.CompositeView.extend({
 
   template: JST['projects/show'],
 
@@ -7,10 +7,9 @@ SatoshiFunder.Views.ProjectShow = Backbone.View.extend({
   },
 
   render: function () {
-    var content = this.template({
-      project: this.model
-    });
+    var content = this.template({ project: this.model });
     this.$el.html(content);
+
     return this;
   }
 

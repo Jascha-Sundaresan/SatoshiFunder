@@ -1,18 +1,23 @@
-<title>
-  <%= project.escape('title') %> by <%= project.escape('user').escape('name') %>
-</title>
-
 <div id="project-title">
   <%= project.escape('title') %>
 </div>
 
-<div id="project-author">
-  by <%= project.escape('user').escape('name') %>
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+    <li role="presentation"><a href="#updates" aria-controls="profile" role="tab" data-toggle="tab">Updates</a></li>
+    <li role="presentation"><a href="#backers" aria-controls="messages" role="tab" data-toggle="tab">Backers</a></li>
+    <li role="presentation"><a href="#comments" aria-controls="settings" role="tab" data-toggle="tab">Comments</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">test1 </div>
+    <div role="tabpanel" class="tab-pane" id="updates">test2.</div>
+    <div role="tabpanel" class="tab-pane" id="backers">...</div>
+    <div role="tabpanel" class="tab-pane" id="comments">...</div>
+  </div>
+
 </div>
-
-
-<%= project.escape('category').escape('name') %><br>
-
-
-
-

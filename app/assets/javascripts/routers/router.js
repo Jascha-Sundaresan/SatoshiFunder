@@ -12,6 +12,7 @@ SatoshiFunder.Routers.Router = Backbone.Router.extend({
     'start': 'start',
     'discover': 'categoriesIndex',
     'projects': 'projectsIndex',
+    'projects/new': 'projectNew',
     'projects/:id': 'projectShow'
   },
 
@@ -32,6 +33,12 @@ SatoshiFunder.Routers.Router = Backbone.Router.extend({
 
   projectsIndex: function() {
     var view = new SatoshiFunder.Views.ProjectsIndex({ collection: this.projects });
+    this._swapView(view);
+  },
+
+  projectNew: function() {
+    var project = new SatoshiFunder.Models.Project();
+    var view = new SatoshiFunder.Views.ProjectNew({ collection: this.projects, model: project, categories: this.categories });
     this._swapView(view);
   },
 
