@@ -158,3 +158,32 @@
 .pledge {
   padding: 20px;
 }
+
+#project-list {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-small {
+  font: 16px/1.5 "Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 40px;
+  width: 25%;
+  list-style: none;
+}
+
+.project-small-view {
+  border: 1px solid #D9D9DE;
+  border-radius: 6px; 
+}
+
+.project-thumbnail {
+  height: 165px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  overflow: hidden;
+  display: block;
+}

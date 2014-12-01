@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :projects
+  has_many :backs
+
+  has_many :pledges, through: :backs, source: :pledge
 
   def password=(password)
     @password = password
