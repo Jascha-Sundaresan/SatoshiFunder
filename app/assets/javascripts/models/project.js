@@ -1,4 +1,8 @@
 SatoshiFunder.Models.Project = Backbone.Model.extend({
-  urlRoot: "/api/projects"
+  urlRoot: "/api/projects",
+
+  user:function() {
+
+  }
 
 });

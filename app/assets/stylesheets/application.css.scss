@@ -14,8 +14,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
-.col-md-24 {
+
+.col-md-2point4 {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
@@ -45,4 +51,99 @@
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+.primary-container {
+  border: 1px solid #d9d9de;
+  border-radius: 6px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+  width: 1002px;
+}
+
+#project-show-left-column {
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 640px;
+}
+
+#project-show-right-column {
+  float: right;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 280px;
+}
+
+#blurb-box {
+  width: 640px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#blurb {
+  font-size: 24px;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+
+#stat-block {
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.stat-row {
+  margin-bottom: 10px;
+}
+
+.stat-info {
+  color: #0f2105;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 1.0416;
+}
+
+.stat-text {
+  color: #0f2105;
+  font-weight: bold;
+}
+
+#pledge-div {
+ padding-left: 20px;
+ padding-right: 20px;
+}
+
+#pledge-button {
+  color: white;
+  background-color: #2bde73;
+  min-height: 20px;
+  line-height: 20px;
+  padding: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  height: auto;
+  border-radius: 6px;
+  transition: 0.2s ease-in-out;
+}
+
+#min-pledge {
+  color: #0f2105;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+#pledge-button:hover {
+  background-color: #26b258;
+}
+
+#stat-footer {
+  padding: 20px;
+  font-size: 12px;
 }

@@ -2,22 +2,34 @@
   <%= project.escape('title') %>
 </div>
 
-<div role="tabpanel">
+<div class="primary-container clearfix">
+  <div role="tabpanel">
 
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-    <li role="presentation"><a href="#updates" aria-controls="profile" role="tab" data-toggle="tab">Updates</a></li>
-    <li role="presentation"><a href="#backers" aria-controls="messages" role="tab" data-toggle="tab">Backers</a></li>
-    <li role="presentation"><a href="#comments" aria-controls="settings" role="tab" data-toggle="tab">Comments</a></li>
-  </ul>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+      <li role="presentation"><a href="#updates" aria-controls="profile" role="tab" data-toggle="tab">Updates</a></li>
+      <li role="presentation"><a href="#backers" aria-controls="messages" role="tab" data-toggle="tab">Backers</a></li>
+      <li role="presentation"><a href="#comments" aria-controls="settings" role="tab" data-toggle="tab">Comments</a></li>
+    </ul>
 
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">test1 </div>
-    <div role="tabpanel" class="tab-pane" id="updates">test2.</div>
-    <div role="tabpanel" class="tab-pane" id="backers">...</div>
-    <div role="tabpanel" class="tab-pane" id="comments">...</div>
+    <!-- Tab panes -->
+    <div class="tab-content" id="project-show-left-column">
+      <div role="tabpanel" class="tab-pane active" id="home"></div>
+      <div role="tabpanel" class="tab-pane" id="updates">updates</div>
+      <div role="tabpanel" class="tab-pane" id="backers">backers</div>
+      <div role="tabpanel" class="tab-pane" id="comments">comments</div>
+    </div>
+
   </div>
 
+  <div id="project-show-right-column">
+    <div id="stats"></div>
+    <div id="user-details"></div>
+    <div id="pledges"></div>
+    <div id="funding period">
+      Funding period<br>
+      <%= project.escape('created_at') %> - <%= project.escape('end_date') %> 
+    </div>
+  </div>
 </div>

@@ -1,0 +1,25 @@
+<div id="stat-block">
+  <div class="stat-row">
+    <div class="stat-info"><%= backers %><br></div>
+    <div class="stat-text">Backers<br></div>
+  </div>
+  <div class="stat-row">    
+    <div class="stat-info">$<%= pledgeAmount %><br></div>
+    <div class="stat-text">pledged of $<%= project.escape('goal_amount') %> goal<br></div>
+  </div>
+  <div class="stat-row">   
+    <div class="stat-info"><%= Math.ceil((Date.parse(project.escape('end_date')) - Date.parse(Date()))/ 86400000) %><br></div>
+    <div class="stat-text">days to go<br></div>
+  </div>
+</div>
+
+<div id="pledge-div">
+  <div id="pledge-button">  
+    Back This Project<br>
+    <div id="min-pledge">$1 minimum pledge<br></div>
+  </div>  
+</div>
+
+<div id="stat-footer">
+This project will only be funded if at least $<%= project.escape('goal_amount') %> is pledged by <%= Date(project.escape('end_date')) %>.
+</div>
