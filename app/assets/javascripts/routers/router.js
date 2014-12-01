@@ -10,6 +10,7 @@ SatoshiFunder.Routers.Router = Backbone.Router.extend({
   routes: {
     '': 'root',
     'start': 'start',
+    // 'sign-up': 'signUp',
     'discover': 'categoriesIndex',
     'projects': 'projectsIndex',
     'projects/new': 'projectNew',
@@ -25,6 +26,12 @@ SatoshiFunder.Routers.Router = Backbone.Router.extend({
     var view = new SatoshiFunder.Views.Start();
     this._swapView(view);
   },
+
+  // signUp: function(){
+  //   this.user = new SatoshiFunder.Models.User();
+  //   var view = new SatoshiFunder.Views.UserNew({ model: this.user });
+  //   this._swapView(view); 
+  // },
 
   categoriesIndex: function() {
     var view = new SatoshiFunder.Views.CategoriesIndex({ collection: this.categories });

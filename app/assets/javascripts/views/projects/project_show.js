@@ -7,19 +7,42 @@ SatoshiFunder.Views.ProjectShow = Backbone.View.extend({
     // this.addHomeView();
   },
 
+  // events: {
+  //   "click .pledge": "pledgeShow"
+  // },
+
   // addHomeView: function() {
   // 	var homeView = new SatoshiFunder.Views.HomeView({ model: this.model });
   // 	this.addSubView('#home', homeView);
   // },
 
+  // pledgeShow: function(event) {
+  //   event.preventDefault();
+  //   debugger
+  // },
+
   addHomeView: function() {
   	var homeView = new SatoshiFunder.Views.HomeView({ model: this.model });
-    this.$el.find('#home').html(homeView.render().$el);
+    this.$el.find('#project-show-left-column').html(homeView.render().$el);
   },
 
   addStatsView: function() {
   	var statsView = new SatoshiFunder.Views.StatsView({ model: this.model });
   	this.$el.find('#stats').html(statsView.render().$el);
+  },
+
+  // addUserDetailsView: function() {
+  // 	var userDetailsView = new SatoshiFunder.Views.UserDetailsView({ model:  })
+  // },
+
+  addPledge: function(pledge) {
+    var view = new SatoshiFunder.Views.PledgeSmall({ model: pledge });
+    this.$el.find('#pledges').append(view.render().$el);
+  },
+
+
+  addPledges: function() {
+    this.model.pledges().each(this.addPledge.bind(this));
   },
 
   render: function () {
@@ -28,6 +51,8 @@ SatoshiFunder.Views.ProjectShow = Backbone.View.extend({
 
     this.addHomeView();
     this.addStatsView();
+    this.addPledges();
+    // this.addUserDetailsView();
     // this.attachSubviews();
     return this;
   }

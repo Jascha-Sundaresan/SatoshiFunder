@@ -20,4 +20,5 @@ SatoshiFunder.Collections.Projects = Backbone.Collection.extend({
     return model;
   }
 
+
 });
