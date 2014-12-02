@@ -27,13 +27,6 @@ SatoshiFunder.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  // signUpModal: function(){
-  //   debugger
-  //   this.user = new SatoshiFunder.Models.User();
-  //   var modal = new SatoshiFunder.Views.UserNew({ model: this.user });
-  //   this._swapModal(modal); 
-  // },
-
   categoriesIndex: function() {
     var view = new SatoshiFunder.Views.CategoriesIndex({ collection: this.categories });
     this._swapView(view);
@@ -67,11 +60,5 @@ SatoshiFunder.Routers.Router = Backbone.Router.extend({
     this._currentView && this._currentView.remove();
     this._currentView = view;
     this.$mainEl.html(view.render().$el);
-  },
-
-  // _swapModal: function(modal) {
-  //   this._currentModal && this._currentModal.remove();
-  //   this._currentModal = modal;
-  //   this.$modalEl.find('.modal-content').html(modal.render().$el);
-  // }
+  }
 });

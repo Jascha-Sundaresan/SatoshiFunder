@@ -39,7 +39,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-      <% if (user.escape('name')) { %>
+      <% if (SatoshiFunder.currentUser.id) { %>
         <li><button class="btn btn-primary navbar-btn" id="sign-out" >Sign Out</button></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= user.escape('name') %><span class="caret"></span></a>

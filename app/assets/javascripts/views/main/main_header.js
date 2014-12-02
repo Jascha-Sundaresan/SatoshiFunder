@@ -2,7 +2,7 @@ SatoshiFunder.Views.Header = Backbone.View.extend({
   initialize: function(options) {
     this.$modalEl = options.$modalEl,
     this.router = options.router
-    this.listenTo(this.model, "change:name", this.render)
+    this.listenTo(this.model, "change:id", this.render)
   },
 
   template: JST['main/header'],
@@ -14,21 +14,26 @@ SatoshiFunder.Views.Header = Backbone.View.extend({
   },
 
   logInModal: function() {
-    user = new SatoshiFunder.Models.User();
-    var modal = new SatoshiFunder.Views.LogIn({ model: user });
+    var modal = new SatoshiFunder.Views.LogIn({ model: this.model });
     this.$modalEl.find('.modal-content').html(modal.render().$el);
   },
 
   signUpModal: function(){
-    user = new SatoshiFunder.Models.User();
-    var modal = new SatoshiFunder.Views.UserNew({ model: user });
+    var modal = new SatoshiFunder.Views.UserNew({ model: this.model });
     this.$modalEl.find('.modal-content').html(modal.render().$el);
   },
 
   logOut: function() {
+    var that = this;
     this.model.url = 'api/session';
-    this.model.destroy();
-    Backbone.history.navigate("", { trigger: true });
+
+    this.model.destroy({
+      success: function (){
+        that.model.set('id', false);
+        Backbone.history.navigate("", { trigger: true });
+      }
+    });
+    
   },
 
   render: function () {

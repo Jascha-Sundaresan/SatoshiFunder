@@ -13,7 +13,12 @@ window.SatoshiFunder = {
       this.currentUser = new SatoshiFunder.Models.User();
     };
 
-    var view = new SatoshiFunder.Views.Header({ model: this.currentUser, $modalEl: $('#mainModal'), router: router });
+    var view = new SatoshiFunder.Views.Header({ 
+      model: this.currentUser, 
+      $modalEl: $('#mainModal'), 
+      router: router
+    });
+    
     $('#Header').html(view.render().$el);
 
     Backbone.history.start();
