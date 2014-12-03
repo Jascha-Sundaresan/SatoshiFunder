@@ -5,7 +5,7 @@ module Api
       @back = Back.new(back_params)
       @back.user_id = current_user.id
       if @back.save
-        render json: true
+        head :no_content
         # head :ok
         # could use `head :no_content` or `render :json => true`
       else
