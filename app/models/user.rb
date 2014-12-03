@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 
   has_many :pledges, through: :backs, source: :pledge
 
+  has_many :backed_projects, through: :pledges, source: :project
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

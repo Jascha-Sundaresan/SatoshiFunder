@@ -1,1 +1,1 @@
-json.partial! 'project', project: @project, show_pledges: true
+json.partial! 'api/projects/project', project: @project, show_details: true

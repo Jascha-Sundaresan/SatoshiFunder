@@ -52,7 +52,10 @@ SatoshiFunder.Routers.Router = Backbone.Router.extend({
 
   projectShow: function(id){
     var project = this.projects.getOrFetch(id);
-    var view = new SatoshiFunder.Views.ProjectShow({ model: project });
+    var view = new SatoshiFunder.Views.ProjectShow({ 
+      model: project,
+      $modalEl: this.$modalEl
+    });
     this._swapView(view);
   },
 

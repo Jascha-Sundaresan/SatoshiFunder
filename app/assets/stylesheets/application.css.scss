@@ -20,6 +20,11 @@
   clear: both;
 }
 
+.navbar {
+  background-color: white;
+  margin-bottom: 0;
+}
+
 
 .col-md-2point4 {
   position: relative;
@@ -46,28 +51,84 @@
   }
 }
 
+.main-container {
+  width: 1002px;
+  margin: 0 auto;
+}
+
+#project-show-header {
+  margin: 0 10px;
+}
+
+#project-title-and-byline {
+  padding-bottom: 40px;
+  padding-top: 40px;
+  text-align: center;  
+}
+
 #project-title {
-  text-align: center;
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
+#project-show-nav-left {
+  margin-bottom: 10px;
+  font-weight: bold;
+  height: 31px;
+}
+
+#project-show-nav-left li {
+  padding: 10px 0;
+  float: left;
+  list-style: none;
+  margin-right: 20px;
+  color: grey;
+  &:hover {
+    color: #081245;
+    cursor: pointer;
+  }
+}
+
+#project-show-nav-left li.active {
+  color: inherit;
+  border-bottom: 5px solid;
+  border-color: #2BDE73;
+
+}
+
+#project-show-nav-left li::after {
+  content: attr(count);
+  min-width: 20px;
+  height: 20px;
+  padding-left: 3px;
+  padding-right: 3px;
+  display:inline-block;
+  background-color: grey;
+  vertical-align:middle;
+  margin-left: 3px;
+  border-radius: 3px;
+  color: white;
+  text-align: center;
+  &:hover {
+    color:white;
+  }
+}
+
+#project-show-nav-left li:first-child::after {
+  content: none;
+}
+
 .primary-container {
   border: 1px solid #d9d9de;
   border-radius: 6px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: auto;
-  width: 1002px;
+  padding: 30px 20px;
+  background-color: white;
 }
 
 #project-show-left-column {
   float: left;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin: 0 10px;
   width: 640px;
 }
 
@@ -112,6 +173,65 @@
 .stat-text {
   color: #0f2105;
   font-weight: bold;
+}
+
+#user-details {
+  background-color: #E8F6FF;
+  border-radius: 6px;
+}
+
+#user-details-header {
+  padding: 20px;
+}
+
+#image-box {
+  display: table-cell;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
+#user-image {
+  border-radius: 50%;
+}
+
+#user-details-header-body {
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+#user-details-byline {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+#user-details-name {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#user-details-location {
+  font-size: 12px;
+  color: #00A0FF;
+  &:hover {
+    color: #081245;
+  }
+}
+
+#user-details-body {
+  padding: 0 20px;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+#user-details-projects {
+  margin-bottom: 10px;
+}
+
+.user-details-icon {
+  margin-right: 5px;
 }
 
 #pledge-div {
@@ -166,7 +286,6 @@
 }
 
 .project-small {
-  font: 16px/1.5 "Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;
   float: left;
   padding-left: 20px;
   padding-right: 20px;
@@ -177,7 +296,8 @@
 
 .project-small-view {
   border: 1px solid #D9D9DE;
-  border-radius: 6px; 
+  border-radius: 6px;
+  background-color: white;
 }
 
 .project-thumbnail {
@@ -186,4 +306,75 @@
   border-top-right-radius: 6px;
   overflow: hidden;
   display: block;
+}
+
+.project-thumbnail-content {
+  padding: 10px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.project-thumbnail-title {
+  font-weight: bold;
+  line-height: 1.25em;
+  margin-bottom: 0.25em;
+  &:hover {
+    color: #081245;
+  } 
+}
+
+.project-thumbnail-details {
+  color: #828587;
+}
+
+.project-thumbnail-byline {
+  margin-bottom: 10px;
+}
+
+.project-thumbnail-blurb {
+  margin-bottom: 20px;
+}
+
+.project-thumbnail-footer {
+  
+}
+
+.project-thumbnail-location {
+  padding-bottom: 10px;
+  color: #828587;
+  &:hover {
+    color: #081245;
+  } 
+}
+
+.pledge-show-title {
+  color: #2BDE73;
+  font-size: 20px;
+  font-weight: bold;
+  margin: -6px -20px 30px;
+  padding-left: 20px;
+  line-height: 50px;
+  /*font: 16px/1.5 "Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;*/
+}
+
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color: black; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+
+body {
+  background-color: #F7FAFA;
+  font: 16px/1.5 "Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #0F2105;
+  
 }

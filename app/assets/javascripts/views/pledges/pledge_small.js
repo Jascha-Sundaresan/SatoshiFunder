@@ -1,10 +1,16 @@
 SatoshiFunder.Views.PledgeSmall = Backbone.View.extend({
   className: 'pledge',
 
+  attributes: {
+    'data-toggle': 'modal',
+    'data-target': '#mainModal'
+  },
+
   template: JST['pledges/small'],
 
-  initialize: function () {
+  initialize: function (options) {
     this.listenTo(this.model, 'sync', this.render);
+    this.$modalEl = options.$modalEl;
   },
 
   events: {
@@ -13,7 +19,8 @@ SatoshiFunder.Views.PledgeSmall = Backbone.View.extend({
 
   show: function(event) {
     event.preventDefault();
-    debugger
+    var modal = new SatoshiFunder.Views.PledgeShow({ model: this.model });
+    this.$modalEl.find('.modal-content').html(modal.render().$el);
   },
 
   render: function () {

@@ -1,11 +1,11 @@
 <div id="stat-block">
   <div class="stat-row">
-    <div class="stat-info"><%= backers %><br></div>
+    <div class="stat-info"><%= project.get('num_backers') %><br></div>
     <div class="stat-text">Backers<br></div>
   </div>
   <div class="stat-row">    
-    <div class="stat-info">$<%= pledgeAmount %><br></div>
-    <div class="stat-text">pledged of $<%= project.escape('goal_amount') %> goal<br></div>
+    <div class="stat-info">฿<%= project.get('total_pledged') %><br></div>
+    <div class="stat-text">pledged of ฿<%= project.escape('goal_amount') %> goal<br></div>
   </div>
   <div class="stat-row">   
     <div class="stat-info"><%= Math.ceil((Date.parse(project.escape('end_date')) - Date.parse(Date()))/ 86400000) %><br></div>

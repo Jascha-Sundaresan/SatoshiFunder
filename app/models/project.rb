@@ -7,5 +7,9 @@ class Project < ActiveRecord::Base
 
   has_many :pledges
 
+  has_many :backs, through: :pledges, source: :backs
+
+  has_many :backers, through: :backs, source: :user
+
 end
 

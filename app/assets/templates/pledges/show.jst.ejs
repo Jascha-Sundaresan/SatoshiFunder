@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <h4 class="modal-title pledge-show-title" id="mainModalLabel" >Back this project</h4>
+</div>
+
+<div class="modal-body">
+  <div class="pledge-amount">
+    <label>Pledge Amount<br>
+      <input name="amount" type="text"><br>
+    </label><br>
+  </div>
+  <div class="reward-selection">
+    <b>Pledge $<%= pledge.escape('amount') %> or more</b><br>
+    <%= pledge.escape('details') %>
+  </div>
+  <div class="reward-delivery">
+    Estimated delivery: <%= pledge.escape('delivery_date') %>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" data-dismiss="modal" id="submit">Continue to next step</button>
+</div>

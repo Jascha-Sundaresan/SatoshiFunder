@@ -3,6 +3,10 @@ SatoshiFunder.Collections.Pledges = Backbone.Collection.extend({
 
   model: SatoshiFunder.Models.Pledge,
 
-  comparator: 'amount'
+  comparator: 'amount',
+
+  initialize: function (models, options) {
+    this.project = options.project
+  }
 
 });

@@ -1,12 +1,25 @@
-<a href="#projects/<%= project.escape('id') %>">
+
   <div class="project-small-view clearfix">
     <div class="project-thumbnail">
+      <a href="#projects/<%= project.escape('id') %>">
       <img src="<%= project.escape('img_url') %>" height="165" width="209">
+      </a>
     </div>
     <div class="project-thumbnail-content">
-      <div class="project-thumbnail-title"></div>
+      <a href="#projects/<%= project.escape('id') %>">
+      <div class="project-thumbnail-title"><%= project.escape('title') %></div>
+      </a>
+      <a href="#projects/<%= project.escape('id') %>">
       <div class="project-thumbnail-details">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.
+        <div class="project-thumbnail-byline">by <%= project.user().escape('name') %></div>
+        <div class="project-thumbnail-blurb">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</div>
+      </div>
+      </a>
+      <div class="project-thumbnail-footer">
+        <a href="#" class="project-thumbnail-location">Nowhere, USA</a>
+      </div>
+      <div class="project-thumbnail-stats">
+        
       </div>
     </div>
     <div class="project-thumbnail-footer"></div>
