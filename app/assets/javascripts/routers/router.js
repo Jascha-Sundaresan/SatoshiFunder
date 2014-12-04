@@ -14,7 +14,8 @@ SatoshiFunder.Routers.Router = Backbone.Router.extend({
     'categories/:id': 'categoryShow',
     'projects': 'projectsIndex',
     'projects/new': 'projectNew',
-    'projects/:id': 'projectShow'
+    'projects/:id': 'projectShow',
+    'users/:id': 'userShow'
   },
 
   root: function(){
@@ -56,6 +57,14 @@ SatoshiFunder.Routers.Router = Backbone.Router.extend({
       model: project,
       $modalEl: this.$modalEl
     });
+    this._swapView(view);
+  },
+
+  userShow: function(id) {
+    debugger
+    var user = new SatoshiFunder.Models.User({ id: id })
+    user.fetch();
+    var view = new SatoshiFunder.Views.UserShow({ model: user });
     this._swapView(view);
   },
 

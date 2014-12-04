@@ -6,7 +6,7 @@ SatoshiFunder::Application.routes.draw do
     resources :categories, only: [:index, :show]
     resources :projects
     resources :backs, only: [:create]
-    resources :users, only: [:create]
+    resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]
   end
 

@@ -1,10 +1,14 @@
 <div id="user-details-header">
   <div id="image-box">  
-    <img id="user-image" src="https://www.cryptocoinsnews.com/wp-content/uploads/2014/11/hoodiethehomeless.jpg" height="80" width="80" >
+    <a href="#users/<%= user.id %>">
+      <img id="user-image" src="https://www.cryptocoinsnews.com/wp-content/uploads/2014/11/hoodiethehomeless.jpg" height="80" width="80" >
+    </a>
   </div>
   <div id="user-details-header-body">
     <div id="user-details-byline" >Project by</div>
-    <div id="user-details-name"><%= user.escape('name') %></div>
+    <a href="#users/<%= user.id %>">
+      <div id="user-details-name"><%= user.escape('name') %></div>
+    </a>
     <div id="user-details-location">Nowhere, Usa</div>
   </div>
 </div>
@@ -29,6 +33,8 @@
   </div>
 </div>
 <div id="user-details-footer" class="clearfix">
-  <div id="user-bio">See full bio</div>
+  <a href="#users/<%= user.id %>">
+    <div id="user-bio">See full bio</div>
+  </a>
   <div id="user-contact">Contact me</div>
 </div>
