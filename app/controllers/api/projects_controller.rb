@@ -5,6 +5,7 @@ module Api
     def create
       @project = current_user.projects.new(project_params)
       if @project.save
+        @project.pledges.create(amount: 0, delivery_date: Date.today, details: "karma")
         render json: @project
       else
         render json: @project.errors.full_messages, status: 422

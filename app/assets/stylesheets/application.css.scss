@@ -13,6 +13,8 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 .clearfix:after {
   content: "";
@@ -216,6 +218,7 @@
   color: #00A0FF;
   &:hover {
     color: #081245;
+    cursor: pointer;
   }
 }
 
@@ -230,8 +233,64 @@
   margin-bottom: 10px;
 }
 
+#user-details-other-projects {
+  font-weight: bold;
+  &:hover {
+    color: #081245;
+    cursor: pointer;
+  }
+}
+
+#user-details-backed-projects {
+  font-weight: bold;
+  &:hover {
+    color: #081245;
+    cursor: pointer;
+  }
+}
+
+#user-details-friends {
+  margin-bottom: 10px;
+}
+
+#user-details-website {
+  margin-bottom: 10px;
+}
+
+#user-details-footer {
+  text-align: center;
+  font-weight: bold;
+  border-top: 1px solid #9CD8FF;
+  color: #00A0FF;
+  background-color: #DEF2FF;
+  padding: 0;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+#user-bio {
+  border-right: 1px solid #9CD8FF;
+  float: left;
+  padding: 15px;
+  width: 50%;
+  &:hover {
+    color: #081245;
+    background-color: #E8F6FF;
+  }
+}
+
+#user-contact {
+  padding: 15px;
+  float: right;
+  width: 50%;
+  &:hover {
+    color: #081245;
+    background-color: #E8F6FF;
+  }
+}
 .user-details-icon {
   margin-right: 5px;
+  color: #828587;
 }
 
 #pledge-div {
@@ -251,6 +310,9 @@
   height: auto;
   border-radius: 6px;
   transition: 0.2s ease-in-out;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 #min-pledge {

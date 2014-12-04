@@ -4,8 +4,8 @@
     <div class="stat-text">Backers<br></div>
   </div>
   <div class="stat-row">    
-    <div class="stat-info">฿<%= project.get('total_pledged') %><br></div>
-    <div class="stat-text">pledged of ฿<%= project.escape('goal_amount') %> goal<br></div>
+    <div class="stat-info"><i class="fa fa-btc"></i><%= project.get('total_pledged') %><br></div>
+    <div class="stat-text">pledged of <i class="fa fa-btc"></i><%= project.escape('goal_amount') %> goal<br></div>
   </div>
   <div class="stat-row">   
     <div class="stat-info"><%= Math.ceil((Date.parse(project.escape('end_date')) - Date.parse(Date()))/ 86400000) %><br></div>
@@ -14,7 +14,7 @@
 </div>
 
 <div id="pledge-div">
-  <div id="pledge-button">  
+  <div id="pledge-button" data-toggle="modal" data-target="#mainModal">  
     Back This Project<br>
     <div id="min-pledge">$1 minimum pledge<br></div>
   </div>  

@@ -6,8 +6,6 @@ module Api
       @back.user_id = current_user.id
       if @back.save
         head :no_content
-        # head :ok
-        # could use `head :no_content` or `render :json => true`
       else
         render json: @back.errors.full_messages, status: 422
       end

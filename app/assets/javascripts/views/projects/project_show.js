@@ -30,7 +30,7 @@ SatoshiFunder.Views.ProjectShow = Backbone.View.extend({
   },
 
   addStatsView: function() {
-  	var statsView = new SatoshiFunder.Views.StatsView({ model: this.model });
+  	var statsView = new SatoshiFunder.Views.StatsView({ model: this.model, $modalEl: this.$modalEl });
   	this.$el.find('#stats').html(statsView.render().$el);
   },
 
@@ -48,7 +48,7 @@ SatoshiFunder.Views.ProjectShow = Backbone.View.extend({
   },
 
   addPledges: function() {
-    this.model.pledges().each(this.addPledge.bind(this));
+    this.model.pledges().slice(1).forEach(this.addPledge.bind(this));
   },
 
   render: function () {
