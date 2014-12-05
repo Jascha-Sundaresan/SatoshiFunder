@@ -4,7 +4,8 @@ SatoshiFunder.Views.StatsView = Backbone.View.extend({
 
   initialize: function (options) {
     this.$modalEl = options.$modalEl;
-    this.listenTo(this.model, 'change sync', this.render);
+    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'sync', this.runCounter);
   },
 
   events: {
@@ -17,11 +18,15 @@ SatoshiFunder.Views.StatsView = Backbone.View.extend({
     this.$modalEl.find('.modal-content').html(modal.render().$el);
   },
 
+  runCounter: function() {    
+    var pledge_total = new countUp("total-pledged", 0, this.model.get('total_pledged'));
+    pledge_total.start();
+  },
+
 
   render: function () {
     var content = this.template({ project: this.model });
     this.$el.html(content);
-
     return this;
   }
 

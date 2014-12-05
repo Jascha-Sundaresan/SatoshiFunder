@@ -19,7 +19,7 @@ SatoshiFunder.Routers.Router = Backbone.Router.extend({
   },
 
   root: function(){
-    var view = new SatoshiFunder.Views.Root();
+    var view = new SatoshiFunder.Views.Root({ $modalEl: this.$modalEl });
     this._swapView(view);
   },
 

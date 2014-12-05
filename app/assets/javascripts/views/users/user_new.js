@@ -4,7 +4,7 @@ SatoshiFunder.Views.UserNew = Backbone.View.extend({
   template: JST['users/new'],
 
   events: {
-    'click #submit': 'submit'
+    'submit': 'submit'
   },
 
   render: function () {
@@ -20,6 +20,7 @@ SatoshiFunder.Views.UserNew = Backbone.View.extend({
     user.save({}, {
       success: function () {
         SatoshiFunder.currentUser.set(user.attributes);
+        $('#mainModal').modal('hide');
         Backbone.history.navigate("#discover", { trigger: true });
       }
     });

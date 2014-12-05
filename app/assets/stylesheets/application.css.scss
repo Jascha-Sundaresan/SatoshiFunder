@@ -39,10 +39,6 @@
   float: left;
 }
 
-/*.category-container:nth-of-type(4) .category-button:hover {
-  background-color: red;
-}*/
-
 .category-button {
   position:relative;
   vertical-align: middle;
@@ -90,65 +86,6 @@
   font-size: 16px;
 }
 
-/*.col-md-2point4 {
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-  float: left;
-  width: 20%;
-} */
-/*
-.carousel-button {
-  width: 234px;
-  height: 100px;
-  display:block;
-  overflow:hidden;
-  position:relative;
-  &:hover {
-    transition: 0.6s ;
-  }
-}
-
-.carousel-button .carousel-items {
-  height: 200%;
-  width: 100%;
-  position:absolute;
-  top:-100%;
-  transition: top .5s ease;
-}
-
-.carousel-button:hover .carousel-items {
-  top:0%;
-}
-
-.carousel-button .carousel-items .well {
-  height:50%;
-}
-
-.cat-count-well {
-  margin: 0;
-  background-color: yellow;
-}
-
-.cat-count-well:nth-of-type(4) {
-  background-color: red !important;
-}
-
-.category-name {
-  font-size: 22px;
-  line-height: 30px;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-  display: block;
-  color: #828587;
-  &:hover {
-    text-decoration: none;  
-  }
-}
-*/
 .main-container {
   width: 1002px;
   margin: 0 auto;
@@ -432,11 +369,15 @@
   margin-top: 20px;
   border-radius: 6px;
   margin-bottom: 20px;
-  background-color: #f7fafa;
 }
 
 .pledge {
+  background-color: #f7fafa;
   padding: 20px;
+  margin-bottom: 20px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 #project-list {
@@ -589,4 +530,11 @@ body {
 
 .modal-dialog {
   width: 300px;
+}
+
+#start-page {
+  background-image: url('/assets/start_page.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
 }

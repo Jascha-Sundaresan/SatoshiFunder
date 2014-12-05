@@ -22,7 +22,7 @@ SatoshiFunder.Views.LogIn = Backbone.View.extend({
       success: function () {
         SatoshiFunder.currentUser.set(user.attributes);
         SatoshiFunder.currentUser.url = "api/users";
-        $('#mainModal').modal('hide')
+        $('#mainModal').modal('hide');
         // Backbone.history.navigate("#", { trigger: true });
       }
     });
