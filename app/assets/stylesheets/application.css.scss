@@ -64,7 +64,7 @@
   width: 100%;
   position:absolute;
   top:-100%;
-  transition: top .5s ease;
+  transition: top .3s ease;
 }
 
 .category-button:hover .button-scroller {
@@ -319,6 +319,7 @@
   color: #00A0FF;
   background-color: #DEF2FF;
   &:hover {
+    cursor: pointer;
     color: #081245;
     background-color: #E8F6FF;
   }
@@ -369,15 +370,72 @@
   margin-top: 20px;
   border-radius: 6px;
   margin-bottom: 20px;
+
 }
 
 .pledge {
   background-color: #f7fafa;
-  padding: 20px;
   margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 6px;
   &:hover {
     cursor: pointer;
   }
+}
+
+.pledge-overlay {
+  height: 100%;
+  width: 100%;
+  display:block;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  background-color: rgba(43,222,115,0.9);
+
+  transform: scale(1.3);
+  &:hover {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.pledge-table {
+  display:table;
+  height: 100%;
+  width: 100%;
+}
+
+.pledge-cell {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  line-height: 30px;
+  font-size: 22px;
+  color: white;
+}
+
+.pledge-small-view {
+  padding: 20px;
+}
+
+.pledge-small-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pledge-small-backers {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.pledge-small-details {
+  margin-bottom: 20px;
 }
 
 #project-list {
@@ -537,4 +595,12 @@ body {
   background-size: cover;
   background-position: center center;
   height: 500px;
+}
+
+.fa-cog {
+  color: #2bde73;
+}
+
+#funding-period {
+  padding: 20px
 }

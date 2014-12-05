@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require countUp.min
+//= require moment.min
 //= require underscore
 //= require backbone
 //= require satoshi_funder

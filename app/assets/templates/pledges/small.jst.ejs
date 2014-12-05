@@ -1,7 +1,26 @@
-Pledge <i class="fa fa-btc"></i><%= pledge.escape('amount') %> or more<br>
+<div class="pledge-overlay">
+<div class="pledge-table">
+  
+ <div class="pledge-cell"> 
+  Select this reward
+ </div>
+</div>
+</div>
 
-<%= pledge.escape('num_backers') %> backers<br>
+<div class="pledge-small-view">
+  <div class="pledge-small-title">  
+    Pledge <i class="fa fa-btc"></i><%= pledge.escape('amount') %> or more<br>
+  </div>
 
-<%= pledge.escape('details') %><br>
+  <div class="pledge-small-backers">  
+    <i class="fa fa-cog"></i> <%= pledge.escape('num_backers') %> backers<br>
+  </div>
 
-Estimated delivery: <%= pledge.escape('delivery_date') %>
+  <div class="pledge-small-details">  
+    <%= pledge.escape('details') %><br>
+  </div>
+
+  <div class="pledge-small-delivery">
+    <b>Estimated delivery:</b> <%= moment(pledge.escape('delivery_date')).format('MMM YYYY') %>
+  </div>
+</div>
