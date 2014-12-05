@@ -21,4 +21,3 @@ if show_details
     end
   end
 end
-

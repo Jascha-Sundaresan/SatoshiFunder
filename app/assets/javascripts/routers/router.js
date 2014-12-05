@@ -61,8 +61,7 @@ SatoshiFunder.Routers.Router = Backbone.Router.extend({
   },
 
   userShow: function(id) {
-    debugger
-    var user = new SatoshiFunder.Models.User({ id: id })
+    var user = new SatoshiFunder.Models.User({ id: id });
     user.fetch();
     var view = new SatoshiFunder.Views.UserShow({ model: user });
     this._swapView(view);

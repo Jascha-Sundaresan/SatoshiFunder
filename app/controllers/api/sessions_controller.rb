@@ -6,7 +6,7 @@ module Api
       @user = User.find_by_credentials(params[:user][:name], params[:user][:password])
       if @user
         sign_in!(@user)
-        render json: @user
+        render json: { id: @user.id }
       else
         render json: @user.errors.full_messages, status: 422
       end
@@ -14,7 +14,7 @@ module Api
     
     def destroy
       sign_out!
-      render json: nil
+      head :no_content
     end
 
     protected

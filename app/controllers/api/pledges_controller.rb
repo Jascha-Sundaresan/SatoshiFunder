@@ -5,7 +5,7 @@ module Api
     def create
       @pledge = Pledge.new(pledge_params)
       if @pledge.save
-        render json: @pledge
+        head :no_content
       else
         render json: @pledge.errors.full_messages, status: 422
       end
@@ -19,14 +19,8 @@ module Api
       @pledge = Pledge.find(params[:id])
     end
 
-    # def edit
-    #   @project = Project.find(params[:id])
-    #   @categories = Category.all
-    # end
-
     # def update
-    #   @project = Project.find(params[:id])
-    
+    #   @project = Project.find(params[:id]) 
     #   if @project.update(project_params)
     #     redirect_to project_url
     #   else

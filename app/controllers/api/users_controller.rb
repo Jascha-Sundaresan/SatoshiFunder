@@ -6,7 +6,7 @@ module Api
       @user = User.new(user_params)
       if @user.save
         sign_in!(@user)
-        render json: @user
+        head :no_content
       else
         render json: @user.errors.full_messages, status: 422
       end
@@ -21,6 +21,5 @@ module Api
     def user_params
       params.require(:user).permit(:name, :password)
     end
-
   end
 end

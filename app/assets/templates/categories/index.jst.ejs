@@ -4,17 +4,26 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container center">
   <% categories.each(function (category, idx) { %>
     <% if ( idx % 5 === 0) { %>
       <div class="row">
     <% } %>
-    <div class="col-md-2point4">
-      <div class="well well-lg">
-        <div class="category-name">
-          <a href="#categories/<%= category.escape('id') %>"><%= category.escape('name') %></a>
+    <div class="category-container button-<%= idx %>">
+      <a href="#categories/<%= category.escape('id') %>" class="category-button">
+        <div class="button-scroller">
+          <div class="button-view">   
+            <div class="category-count v-center">
+              <%= category.escape('project_count') %> live projects
+            </div>
+          </div>
+          <div class="button-view">
+            <div class="category-title">
+              <%= category.escape('name') %>
+            </div>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
     <% if ((idx + 1) % 5 === 0) {%>
       </div>

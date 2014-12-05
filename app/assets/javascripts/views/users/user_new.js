@@ -16,11 +16,11 @@ SatoshiFunder.Views.UserNew = Backbone.View.extend({
   submit: function (event) {
     event.preventDefault();
     var attrs = this.$el.serializeJSON();
-
-    this.model.set(attrs);
-    this.model.save({}, {
+    var user = new SatoshiFunder.Models.User(attrs);
+    user.save({}, {
       success: function () {
-        Backbone.history.navigate("#projects", { trigger: true });
+        SatoshiFunder.currentUser.set(user.attributes);
+        Backbone.history.navigate("#discover", { trigger: true });
       }
     });
   }

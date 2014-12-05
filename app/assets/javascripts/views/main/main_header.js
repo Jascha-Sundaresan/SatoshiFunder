@@ -3,6 +3,7 @@ SatoshiFunder.Views.Header = Backbone.View.extend({
     this.$modalEl = options.$modalEl,
     this.router = options.router
     this.listenTo(this.model, "change:id", this.render)
+    this.listenTo(this.router, "route", this.render)
   },
 
   template: JST['main/header'],

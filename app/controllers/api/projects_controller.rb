@@ -6,7 +6,7 @@ module Api
       @project = current_user.projects.new(project_params)
       if @project.save
         @project.pledges.create(amount: 0, delivery_date: Date.today, details: "karma")
-        render json: @project
+        head :no_content
       else
         render json: @project.errors.full_messages, status: 422
       end
@@ -20,16 +20,11 @@ module Api
       @project = Project.find(params[:id])
     end
 
-    def edit
-      @project = Project.find(params[:id])
-      @categories = Category.all
-    end
-
     def update
       @project = Project.find(params[:id])
     
       if @project.update(project_params)
-        redirect_to project_url
+        head :no_content
       else
         flash.now[:errors] = @project.errors.full_messages
         @categories = Category.all
@@ -40,7 +35,7 @@ module Api
     def destroy
       @project = Project.find(params[:id])
       if @project.destroy
-        redirect_to projects_url
+        head :no_content
       else
         flash[:errors] = ["No such project!"]
         redirect_to projects_url

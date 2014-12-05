@@ -8,18 +8,9 @@ SatoshiFunder.Views.ProjectShow = Backbone.View.extend({
     // this.addHomeView();
   },
 
-  // events: {
-  //   "click .pledge": "pledgeShow"
-  // },
-
   // addHomeView: function() {
   // 	var homeView = new SatoshiFunder.Views.HomeView({ model: this.model });
   // 	this.addSubView('#home', homeView);
-  // },
-
-  // pledgeShow: function(event) {
-  //   event.preventDefault();
-  //   debugger
   // },
 
   addHomeView: function() {
