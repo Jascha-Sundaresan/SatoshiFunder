@@ -1,14 +1,20 @@
 SatoshiFunder.Views.ProjectNew = Backbone.View.extend({
   initialize: function(options) {
     this.categories = options.categories
+    if (this.categories.length == 0) {
+      this.categories.fetch();
+    }
+    this.listenTo(this.categories, 'sync', this.render)
   },
 
   tagName: 'form',
 
+  id: 'new-project-form',
+
   template: JST['projects/new'],
 
   events: {
-    'click button': 'submit'
+    'submit': 'submit'
   },
 
   render: function () {

@@ -1,17 +1,29 @@
-<h1>New Project</h1>
+<div id="new-project-header">
+  What are you going to create?  
+</div>
 
-<label>Category<br>
-  <select name="category_id">
-    <% categories.each(function(category) { %>
-      <option value="<%= category.escape('id') %>"><%= category.escape('name') %></option>
-    <% }) %>
-  </select>
-</label><br>
+<div id="new-project-input">
+  
+  <div id="new-project-category">
+    
+    I want to fund my 
 
-<label>Title<br>
-  <input name="title" type="text"><br>
-</label><br>
+    <select id="new-form-category-dropdown" name="category_id">
+        <% categories.each(function(category) { %>
+          <option value="<%= category.escape('id') %>"><%= category.escape('name') %></option>
+        <% }) %>
+    </select> 
 
-<button class="btn btn-primary">Submit</button><br>
+    company called...<br>
+  </div>
+  
+  <input id="new-project-title" name="title" type="text" placeholder="title..."><br>
 
+
+</div> 
+<center>
+  
+<input id="new-project-button" type="submit" class="btn btn-primary" value="Make it Live!"><br>
+
+</center>
 

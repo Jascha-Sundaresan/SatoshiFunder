@@ -86,6 +86,53 @@
   font-size: 16px;
 }
 
+#new-project-form {
+  width: 700px;
+  margin: 0 auto;
+}
+
+#new-project-header {
+  padding: 80px 0;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 200;
+}
+
+#new-project-input {
+  margin: auto;
+  font-size: 31px;
+}
+
+#new-project-category {
+  text-align: center;
+  font-weight: 100px;
+  padding-bottom: 20px;
+}
+
+#new-form-category-dropdown {
+  display: inline-table; 
+}
+
+#new-project-title {
+  border: none;
+  border-bottom: 1px solid #d9d9de;
+  background-color: transparent;
+  width: 100%;
+  padding-top: 20px;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    border: none;
+    border-bottom: 1px solid black;
+  }
+}
+
+#new-project-button {
+  transform: scale(2);
+  margin-top: 40px;
+}
+
 .main-container {
   width: 1002px;
   margin: 0 auto;
