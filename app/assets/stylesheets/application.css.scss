@@ -113,7 +113,7 @@
   display: inline-table; 
 }
 
-#new-project-title {
+.clearinput {
   border: none;
   border-bottom: 1px solid #d9d9de;
   background-color: transparent;
@@ -126,6 +126,10 @@
     border: none;
     border-bottom: 1px solid black;
   }
+}
+
+.f25 {
+  font-size: 25px;
 }
 
 #new-project-button {
