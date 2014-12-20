@@ -5,13 +5,7 @@ SatoshiFunder.Views.ProjectShow = Backbone.View.extend({
   initialize: function (options) {
     this.listenTo(this.model, 'sync', this.render);
     this.$modalEl = options.$modalEl
-    // this.addHomeView();
   },
-
-  // addHomeView: function() {
-  // 	var homeView = new SatoshiFunder.Views.HomeView({ model: this.model });
-  // 	this.addSubView('#home', homeView);
-  // },
 
   addHomeView: function() {
   	var homeView = new SatoshiFunder.Views.HomeView({ model: this.model });
@@ -50,7 +44,6 @@ SatoshiFunder.Views.ProjectShow = Backbone.View.extend({
     this.addStatsView();
     this.addPledges();
     this.addUserDetailsView();
-    // this.attachSubviews();
     return this;
   }
 

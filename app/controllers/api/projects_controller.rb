@@ -6,7 +6,7 @@ module Api
       @project = current_user.projects.new(project_params)
       if @project.save
         @project.pledges.create(amount: 0, delivery_date: Date.today, details: "karma")
-        head :no_content
+        render json: @project
       else
         render json: @project.errors.full_messages, status: 422
       end
@@ -45,7 +45,11 @@ module Api
     protected
     
     def project_params
-      params.require(:project).permit(:title, :category_id)
+      params.require(:project).permit(:title, 
+                                      :category_id, 
+                                      :blurb, 
+                                      :end_date, 
+                                      :goal_amount)
     end
 
   end

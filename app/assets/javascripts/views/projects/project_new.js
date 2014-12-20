@@ -32,7 +32,10 @@ SatoshiFunder.Views.ProjectNew = Backbone.View.extend({
     this.model.save({}, {
       success: function () {
         that.collection.add(that.model, { merge: true });
-        Backbone.history.navigate("#projects", { trigger: true });
+        Backbone.history.navigate("#projects/" + that.model.id, { trigger: true });
+      },
+      error: function (){
+
       }
     });
   }
