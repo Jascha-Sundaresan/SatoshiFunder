@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-ActiveRecord::Base.transaction do
+
 Category.create!( name: "Art" )
 Category.create!( name: "Comics" )
 Category.create!( name: "Crafts" )
@@ -42,4 +42,3 @@ project1.pledges.create!( amount: 10, delivery_date: "2016-01-01", details: "Bec
 project1.pledges.create!( amount: 50, delivery_date: "2016-01-01", details: "Want to be more involved?  Become a voting patner, today!")
 project1.pledges.create!( amount: 100, delivery_date: "2016-01-01", details: "Join the Board of Directors.")
 project1.pledges.create!( amount: 501, delivery_date: "2016-01-01", details: "Take control of the company.")
-end
