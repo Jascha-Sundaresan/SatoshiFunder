@@ -8,7 +8,7 @@ SatoshiFunder.Views.PledgeShow = Backbone.View.extend({
   },
 
   events: {
-    'click #submit': 'submit'
+    'submit': 'submit'
   },
 
   render: function () {

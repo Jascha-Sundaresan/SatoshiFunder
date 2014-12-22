@@ -11,7 +11,12 @@ SatoshiFunder.Models.Pledge = Backbone.Model.extend({
       }},
       success: function(){
         that.project().fetch();
-
+        $('#mainModal').modal('hide');
+      },
+      error: function(response){
+        $('#mainModal').modal('hide');
+        debugger
+        alert('error');
       }
     })
   },

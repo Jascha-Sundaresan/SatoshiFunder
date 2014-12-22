@@ -58,7 +58,6 @@ SatoshiFunder.Views.ProjectShow = Backbone.View.extend({
     var content = this.template({ project: this.model });
     this.$el.html(content);
 
-    // this.addHomeView();
     this.addTabView();
     this.addStatsView();
     this.addPledges();

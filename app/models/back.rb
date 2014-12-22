@@ -7,4 +7,8 @@ class Back < ActiveRecord::Base
 
   has_one :project, through: :pledge, source: :project
 
+  def save
+    super unless self.amount < self.pledge.amount
+  end
+
 end

@@ -24,7 +24,7 @@
   <div style="color:#999" class="f25 pt2"> 
    End Date:
   </div>
-  <input type="date" name="end_date" placeholder="end date..."
+  <input type="date" name="end_date" placeholder="end date..." min='<%= moment(Date()).format("YYYY[-]MM[-]DD") %>'
          class="clearinput f25"      id="new-project-date">
 
   <input type="text" class="clearinput f25" placeholder="goal amount..."
