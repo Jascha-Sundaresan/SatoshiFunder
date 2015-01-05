@@ -1,17 +1,35 @@
 SatoshiFunder.Views.Header = Backbone.View.extend({
   initialize: function(options) {
     this.$modalEl = options.$modalEl,
-    this.router = options.router
+    // this.router = options.router
     this.listenTo(this.model, "change:id", this.render)
-    this.listenTo(this.router, "route", this.render)
+    // this.listenTo(this.router, "route", this.render)
   },
 
   template: JST['main/header'],
 
   events: {
+    'click a[href=\'#\']': 'off',
+    'click a[href=\'#start\']': 'toggleStart',
+    'click a[href=\'#discover\']': 'toggleDiscover',
     'click #log-in': 'logInModal',
     'click #sign-up': 'signUpModal',
     'click #sign-out': 'logOut'
+  },
+
+  off: function() {
+    this.$el.find('.active').removeClass('active')  
+  },
+
+  toggleStart: function() {
+    this.off();
+    debugger
+    this.$el.find('a[href=\'#start\']').parent().addClass('active');
+  },
+
+  toggleDiscover: function() {
+    this.off();
+    this.$el.find('a[href=\'#discover\']').parent().addClass('active');
   },
 
   logInModal: function() {
